@@ -1,0 +1,92 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: $color-bg-page;
+}
+
+.searchBar {
+  padding: $spacing-md $page-padding;
+  background: $color-bg-card;
+}
+
+.searchInput {
+  height: 72rpx;
+  padding: 0 $spacing-lg;
+  background: $color-bg-hover;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.side {
+  width: 176rpx;
+  height: 100%;
+  background: $color-bg-card;
+  flex-shrink: 0;
+}
+
+.sideItem {
+  display: flex;
+  align-items: center;
+  padding: $spacing-lg $spacing-md;
+  position: relative;
+
+  &.sideItemActive {
+    background: $color-bg-page;
+    color: $color-primary;
+    font-weight: $font-weight-semibold;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6rpx;
+      height: 40rpx;
+      background: $color-primary;
+      border-radius: $radius-xs;
+    }
+  }
+}
+
+.sideName {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+  @include text-ellipsis;
+}
+
+.main {
+  flex: 1;
+  height: 100%;
+  padding: $spacing-md $page-padding;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: $spacing-md 0;
+}
+
+.loading {
+  text-align: center;
+  padding: $spacing-lg;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+}
+
+.empty {
+  text-align: center;
+  padding: $spacing-xl 0;
+  color: $color-text-tertiary;
+  font-size: $font-size-md;
+}

@@ -1,0 +1,741 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+}
+
+.header {
+  background: linear-gradient(135deg, $color-primary-dark, $color-primary);
+  padding: 40rpx $page-padding 56rpx;
+  color: $color-text-white;
+}
+
+.headerBrand {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerTitle {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+}
+
+.headerSub {
+  margin-top: 8rpx;
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.tabBar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  background: $color-bg-card;
+  border-bottom: 1rpx solid $color-border;
+  box-shadow: $shadow-card;
+}
+
+.tabItem {
+  flex: 1;
+  padding: 24rpx 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tabItemOn .tabName {
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+}
+
+.tabItemOn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48rpx;
+  height: 6rpx;
+  border-radius: 6rpx;
+  background: $color-primary;
+}
+
+.tabName {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+.content {
+  padding: $spacing-md $page-padding 80rpx;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+}
+
+.cardTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  display: block;
+}
+
+.cardBtn {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  padding: 8rpx 20rpx;
+  border: 1rpx solid $color-primary;
+  border-radius: $radius-round;
+}
+
+.subText {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin: 8rpx 0 $spacing-md;
+}
+
+.emptyText {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  line-height: $line-height-normal;
+  padding: $spacing-md 0;
+}
+
+.loadingBox {
+  padding: 120rpx 0;
+  text-align: center;
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+.errorTitle {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.errorText {
+  display: block;
+  margin-top: $spacing-sm;
+  font-size: $font-size-md;
+  color: $color-error;
+}
+
+.errorHint {
+  display: block;
+  margin-top: $spacing-md;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  line-height: $line-height-normal;
+}
+
+// ---------- 概览 ----------
+.storeName {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.storeMeta {
+  display: block;
+  margin-top: 8rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  line-height: $line-height-normal;
+}
+
+.storeIntro {
+  display: block;
+  margin-top: $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-loose;
+}
+
+.statGrid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: $spacing-sm -8rpx 0;
+}
+
+.statCard {
+  width: 25%;
+  padding: $spacing-sm 8rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statNum {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.statNumGold {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-gold;
+}
+
+.statLabel {
+  margin-top: 6rpx;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+// 流量柱状图
+.chart {
+  display: flex;
+  align-items: flex-end;
+  height: 220rpx;
+  margin-top: $spacing-md;
+  padding-top: $spacing-sm;
+}
+
+.chartCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.chartVal {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  margin-bottom: 6rpx;
+}
+
+.chartTrack {
+  flex: 1;
+  width: 36rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: $color-bg-hover;
+  border-radius: $radius-sm;
+  overflow: hidden;
+}
+
+.chartBar {
+  width: 100%;
+  background: linear-gradient(180deg, $color-primary-light, $color-primary);
+  border-radius: $radius-sm $radius-sm 0 0;
+  min-height: 6rpx;
+}
+
+.chartLbl {
+  margin-top: 6rpx;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.commissionRow {
+  margin-top: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1rpx solid $color-divider;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.commissionLabel {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.commissionValue {
+  margin-left: $spacing-sm;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+.commissionNote {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-left: $spacing-sm;
+}
+
+// ---------- 店铺专属二维码（扫码进入网页店铺） ----------
+.shopQrCard {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  margin-top: $spacing-md;
+}
+.shopQr {
+  width: 220rpx;
+  height: 220rpx;
+  background: #fff;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-lg;
+  flex-shrink: 0;
+}
+.shopQrInfo {
+  flex: 1;
+  min-width: 0;
+}
+.qrTip {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+  margin-bottom: $spacing-sm;
+}
+.qrLinkRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+.qrLink {
+  flex: 1;
+  min-width: 0;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  word-break: break-all;
+  background: $color-bg-page;
+  padding: 10rpx 14rpx;
+  border-radius: 12rpx;
+}
+.qrCopy {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  border: 1rpx solid $color-primary;
+  border-radius: $radius-round;
+  padding: 8rpx 24rpx;
+}
+
+// ---------- 商品 ----------
+.productRow {
+  display: flex;
+  padding: $spacing-md 0;
+  border-bottom: 1rpx solid $color-divider;
+}
+
+.productRow:last-child {
+  border-bottom: none;
+}
+
+.productThumb {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: $radius-md;
+  background: $color-bg-hover;
+  flex-shrink: 0;
+}
+
+.productInfo {
+  flex: 1;
+  min-width: 0;
+  margin-left: $spacing-md;
+  display: flex;
+  flex-direction: column;
+}
+
+.productName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.productMetaRow {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 8rpx;
+}
+
+.productMeta {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-right: $spacing-sm;
+}
+
+.productActions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12rpx;
+  margin-left: $spacing-sm;
+  flex-shrink: 0;
+}
+
+// 状态徽章
+.pill {
+  font-size: $font-size-xs;
+  padding: 4rpx 14rpx;
+  border-radius: $radius-round;
+  margin-right: $spacing-xs;
+}
+
+.pillGreen {
+  color: $color-success;
+  background: rgba(0, 180, 42, 0.1);
+}
+
+.pillGold {
+  color: #b8860b;
+  background: rgba(201, 160, 99, 0.15);
+}
+
+.pillGray {
+  color: $color-text-tertiary;
+  background: $color-bg-hover;
+}
+
+// 按钮
+.btnPrimary {
+  font-size: $font-size-sm;
+  color: $color-text-white;
+  background: $color-primary;
+  padding: 10rpx 24rpx;
+  border-radius: $radius-round;
+  text-align: center;
+}
+
+.btnPlain {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  border: 1rpx solid $color-border;
+  padding: 10rpx 24rpx;
+  border-radius: $radius-round;
+  text-align: center;
+}
+
+.btnDanger {
+  font-size: $font-size-sm;
+  color: $color-error;
+  border: 1rpx solid $color-error;
+  padding: 10rpx 24rpx;
+  border-radius: $radius-round;
+  text-align: center;
+}
+
+// 上架表单
+.formGroup {
+  margin-bottom: $spacing-md;
+}
+
+.formLabel {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: 8rpx;
+}
+
+.formInput {
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-sm;
+  padding: 16rpx 20rpx;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.formTextarea {
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-sm;
+  padding: 16rpx 20rpx;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  width: 100%;
+  box-sizing: border-box;
+  height: 160rpx;
+}
+
+.formPicker {
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-sm;
+  padding: 16rpx 20rpx;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.formRow {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.formSubmit {
+  margin-top: $spacing-sm;
+  background: $color-primary;
+  border-radius: $radius-button;
+  height: $button-height-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formSubmitText {
+  color: $color-text-white;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
+
+// ---------- 订单 ----------
+.orderRow {
+  padding: $spacing-md 0;
+  border-bottom: 1rpx solid $color-divider;
+}
+
+.orderRow:last-child {
+  border-bottom: none;
+}
+
+.orderHead {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.orderNo {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-right: $spacing-sm;
+}
+
+.orderMeta {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-top: 8rpx;
+}
+
+.orderFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+
+.orderAmount {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+.orderTime {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.orderActions {
+  display: flex;
+  gap: $spacing-sm;
+  justify-content: flex-end;
+  margin-top: $spacing-sm;
+}
+
+// ---------- 消息 ----------
+.convRow {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md 0;
+  border-bottom: 1rpx solid $color-divider;
+}
+
+.convRow:last-child {
+  border-bottom: none;
+}
+
+.convAvatar {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: $radius-round;
+  background: linear-gradient(135deg, $color-primary-light, $color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.convAvatarText {
+  color: $color-text-white;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
+
+.convMain {
+  flex: 1;
+  min-width: 0;
+  margin-left: $spacing-md;
+}
+
+.convNameRow {
+  display: flex;
+  align-items: center;
+}
+
+.convName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.convBadge {
+  margin-left: $spacing-sm;
+  min-width: 32rpx;
+  height: 32rpx;
+  padding: 0 8rpx;
+  border-radius: $radius-round;
+  background: $color-error;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.convBadgeText {
+  color: $color-text-white;
+  font-size: $font-size-xs;
+}
+
+.convPreview {
+  display: block;
+  margin-top: 6rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  @include text-ellipsis;
+}
+
+.convArrow {
+  font-size: $font-size-lg;
+  color: $color-text-disabled;
+  margin-left: $spacing-sm;
+}
+
+// 聊天
+.chatBox {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 220rpx);
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+}
+
+.chatHead {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md $spacing-lg;
+  border-bottom: 1rpx solid $color-border;
+}
+
+.chatBack {
+  font-size: $font-size-md;
+  color: $color-primary;
+  margin-right: $spacing-md;
+}
+
+.chatTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.chatMsgs {
+  flex: 1;
+  padding: $spacing-md;
+  box-sizing: border-box;
+}
+
+.msgRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: $spacing-md;
+}
+
+.msgRowMe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: $spacing-md;
+}
+
+.bubbleOther {
+  max-width: 80%;
+  background: $color-bg-page;
+  border-radius: $radius-md $radius-md $radius-md 0;
+  padding: 16rpx 20rpx;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+}
+
+.bubbleMe {
+  max-width: 80%;
+  background: $color-primary;
+  border-radius: $radius-md $radius-md 0 $radius-md;
+  padding: 16rpx 20rpx;
+  font-size: $font-size-md;
+  color: $color-text-white;
+  line-height: $line-height-normal;
+}
+
+.msgTime {
+  margin-top: 6rpx;
+  font-size: $font-size-xs;
+  color: $color-text-disabled;
+}
+
+.chatInputBar {
+  display: flex;
+  align-items: center;
+  padding: $spacing-sm $spacing-md;
+  border-top: 1rpx solid $color-border;
+  background: $color-bg-card;
+}
+
+.chatInput {
+  flex: 1;
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-round;
+  padding: 14rpx 24rpx;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.chatSend {
+  margin-left: $spacing-sm;
+  background: $color-primary;
+  border-radius: $radius-round;
+  padding: 14rpx 32rpx;
+}
+
+.chatSendText {
+  color: $color-text-white;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+}

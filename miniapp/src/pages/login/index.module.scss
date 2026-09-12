@@ -1,0 +1,104 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #8c1f28 0%, #f7f5f0 420rpx);
+  padding: $spacing-xl $page-padding;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-sm;
+  margin: $spacing-xl 0 $spacing-xl;
+}
+
+.title {
+  font-size: 64rpx;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+  letter-spacing: 4rpx;
+}
+
+.slogan {
+  font-size: $font-size-md;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-xl;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: $spacing-xl;
+  border-bottom: 1rpx solid $color-divider;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  font-size: $font-size-lg;
+  color: $color-text-tertiary;
+  padding-bottom: $spacing-md;
+  position: relative;
+
+  &.tabActive {
+    color: $color-primary;
+    font-weight: $font-weight-semibold;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -1rpx;
+      width: 64rpx;
+      height: 4rpx;
+      background: $color-primary;
+      border-radius: $radius-xs;
+    }
+  }
+}
+
+.input {
+  height: 88rpx;
+  padding: 0 $spacing-lg;
+  background: $color-bg-hover;
+  border-radius: $radius-md;
+  font-size: $font-size-md;
+  margin-bottom: $spacing-md;
+}
+
+.submitBtn {
+  height: 96rpx;
+  margin-top: $spacing-lg;
+  border-radius: $radius-button;
+  background: linear-gradient(135deg, #8c1f28 0%, #b23a44 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitText {
+  color: $color-text-white;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+}
+
+.tip {
+  display: block;
+  margin-top: $spacing-lg;
+  text-align: center;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.tipLink {
+  color: $color-primary;
+  margin-left: 8rpx;
+}

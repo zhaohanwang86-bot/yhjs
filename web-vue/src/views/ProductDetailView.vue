@@ -146,8 +146,10 @@ async function submitOrder() {
       receiverPhone: receiverPhone.value.trim(),
       receiverAddress: receiverAddress.value.trim(),
       items: [{ productId: productDbId.value, quantity: qty.value }],
-      source: 'market'
+      source: 'market',
+      clientToken: takeClientToken()
     })
+    pendingClientToken = ''
     saveLS('yhjs_receiver', {
       name: receiverName.value.trim(),
       phone: receiverPhone.value.trim(),

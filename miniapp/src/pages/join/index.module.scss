@@ -1,0 +1,202 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: 80rpx;
+}
+
+.hero {
+  background: linear-gradient(135deg, $color-primary-dark, $color-primary);
+  padding: 48rpx $page-padding;
+}
+
+.heroTitle {
+  display: block;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+  line-height: $line-height-tight;
+}
+
+.heroSub {
+  display: block;
+  margin-top: $spacing-sm;
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: $line-height-normal;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin: $spacing-md $page-padding 0;
+  box-shadow: $shadow-card;
+}
+
+.cardTitle {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.reqTip {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin: 8rpx 0 $spacing-md;
+}
+
+.req {
+  color: $color-error;
+}
+
+.subText {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  line-height: $line-height-normal;
+  margin: 8rpx 0 $spacing-md;
+}
+
+// 状态卡
+.appRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: $spacing-sm;
+}
+
+.appName {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.appMeta {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-top: 8rpx;
+}
+
+.appNote {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-error;
+  margin-top: 8rpx;
+}
+
+.appTime {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-disabled;
+  margin-top: $spacing-sm;
+}
+
+.pill {
+  font-size: $font-size-xs;
+  padding: 4rpx 14rpx;
+  border-radius: $radius-round;
+}
+
+.pillGreen {
+  color: $color-success;
+  background: rgba(0, 180, 42, 0.1);
+}
+
+.pillGold {
+  color: #b8860b;
+  background: rgba(201, 160, 99, 0.15);
+}
+
+.pillGray {
+  color: $color-text-tertiary;
+  background: $color-bg-hover;
+}
+
+.tipBox {
+  margin-top: $spacing-md;
+  background: rgba(0, 180, 42, 0.08);
+  border-radius: $radius-sm;
+  padding: $spacing-sm $spacing-md;
+}
+
+.tipText {
+  font-size: $font-size-sm;
+  color: $color-success;
+  line-height: $line-height-normal;
+}
+
+// 表单
+.formGroup {
+  margin-bottom: $spacing-md;
+}
+
+.formLabel {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: 8rpx;
+}
+
+.formInput {
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-sm;
+  padding: 16rpx 20rpx;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.formTextarea {
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-sm;
+  padding: 16rpx 20rpx;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  width: 100%;
+  box-sizing: border-box;
+  height: 160rpx;
+}
+
+.formPicker {
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-sm;
+  padding: 16rpx 20rpx;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.formRow {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.submitBtn {
+  margin-top: $spacing-sm;
+  background: $color-primary;
+  border-radius: $radius-button;
+  height: $button-height-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitBtnDisabled {
+  opacity: 0.6;
+}
+
+.submitText {
+  color: $color-text-white;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}

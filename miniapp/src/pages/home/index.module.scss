@@ -1,0 +1,117 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  padding-bottom: $spacing-xl;
+  background: linear-gradient(180deg, #8c1f28 0%, #f7f5f0 360rpx);
+}
+
+.header {
+  padding: $spacing-lg $page-padding $spacing-lg;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  margin-bottom: $spacing-lg;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+  letter-spacing: 2rpx;
+}
+
+.slogan {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  height: 72rpx;
+  padding: 0 $spacing-lg;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: $radius-button;
+}
+
+.searchText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+.section {
+  margin: 0 $page-padding $spacing-lg;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+}
+
+.sectionTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.sectionMore {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.catList {
+  @include scroll-x-container;
+}
+
+.catItem {
+  @include scroll-x-item(120rpx);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-md 0;
+  margin-right: $spacing-sm;
+}
+
+.catIcon {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: $radius-round;
+  background: $color-bg-card;
+  box-shadow: $shadow-card;
+  font-size: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catName {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  @include text-ellipsis;
+  max-width: 120rpx;
+}
+
+.storeList {
+  @include scroll-x-container;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: $spacing-md 0;
+}
+
+.loading {
+  text-align: center;
+  padding: $spacing-lg;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+}

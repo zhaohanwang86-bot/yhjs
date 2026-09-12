@@ -1,0 +1,202 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: $color-bg-page;
+}
+
+.msgList {
+  flex: 1;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.inner {
+  padding: $spacing-md $page-padding;
+  padding-bottom: $spacing-lg;
+}
+
+.rowBot {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: $spacing-md;
+}
+
+.rowMe {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-bottom: $spacing-md;
+}
+
+.avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: $radius-round;
+  background: linear-gradient(135deg, $color-primary-light, $color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: $spacing-sm;
+}
+
+.avatarText {
+  color: $color-text-white;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+}
+
+.bubbleBot {
+  max-width: 76%;
+  background: $color-bg-card;
+  border-radius: $radius-md $radius-md $radius-md 0;
+  padding: 18rpx 24rpx;
+  box-shadow: $shadow-card;
+}
+
+.bubbleMe {
+  max-width: 76%;
+  background: $color-primary;
+  border-radius: $radius-md $radius-md 0 $radius-md;
+  padding: 18rpx 24rpx;
+}
+
+.bubbleText {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+  word-break: break-word;
+}
+
+.rowMe .bubbleText {
+  color: $color-text-white;
+}
+
+// ============ AI 回复富文本（预览格式） ============
+.md {
+  display: flex;
+  flex-direction: column;
+}
+
+.mdText {
+  display: block;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+  word-break: break-word;
+}
+
+.mdHeading {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  margin: 8rpx 0 4rpx;
+}
+
+.mdBold {
+  font-weight: $font-weight-bold;
+}
+
+.mdCodeInline {
+  font-size: $font-size-sm;
+  color: $color-primary-dark;
+  background: $color-bg-hover;
+  border-radius: $radius-xs;
+  padding: 0 6rpx;
+}
+
+.mdCodeBlock {
+  background: $color-bg-hover;
+  border-radius: $radius-sm;
+  padding: 12rpx 16rpx;
+  margin: 8rpx 0;
+}
+
+.mdCodeText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+  word-break: break-all;
+}
+
+.mdList {
+  display: flex;
+  flex-direction: column;
+  margin: 4rpx 0;
+}
+
+.mdLi {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rpx 0;
+}
+
+.mdBullet {
+  width: 32rpx;
+  flex-shrink: 0;
+  font-size: $font-size-md;
+  color: $color-primary;
+  line-height: $line-height-normal;
+}
+
+// 快捷问题
+.quickWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  padding: 0 $page-padding $spacing-sm;
+}
+
+.quickChip {
+  background: $color-bg-card;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-round;
+  padding: 10rpx 24rpx;
+}
+
+.quickText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+// 输入栏
+.inputBar {
+  display: flex;
+  align-items: center;
+  padding: $spacing-sm $page-padding;
+  padding-bottom: calc(#{$spacing-sm} + env(safe-area-inset-bottom));
+  background: $color-bg-card;
+  border-top: 1rpx solid $color-border;
+}
+
+.input {
+  flex: 1;
+  background: $color-bg-page;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-round;
+  padding: 16rpx 28rpx;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.sendBtn {
+  margin-left: $spacing-sm;
+  background: $color-primary;
+  border-radius: $radius-round;
+  padding: 16rpx 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendBtnDisabled {
+  opacity: 0.6;
+}
+
+.sendText {
+  color: $color-text-white;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+}

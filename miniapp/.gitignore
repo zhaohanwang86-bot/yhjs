@@ -1,0 +1,23 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+dist-h5/
+
+# Taro 缓存与工具
+.taro-home/
+.taro/
+.pai/
+.swc/
+*.log
+
+# 微信敏感信息（私钥、本地私有配置）
+.auth/
+project.private.config.json
+
+# 临时脚本/产物
+_dl_tmp/
+_dl*.cjs
+_*.cjs
+_*.json
