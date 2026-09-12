@@ -1,0 +1,106 @@
+/* ===================================================================
+   移动端 / Android App 适配层
+   仅在 ≤768px 生效（桌面/平板横屏不受影响）
+   加载顺序在 style.css 之后，可直接覆盖原样式
+   =================================================================== */
+@media (max-width: 768px) {
+  :root { -webkit-text-size-adjust: 100%; }
+
+  /* 给底部 Tab 栏留出空间 */
+  body {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom));
+    overscroll-behavior-y: none;
+  }
+
+  /* 移动端隐藏顶部通栏和整块页脚，避免挤占首屏 */
+  .topbar { display: none; }
+  .footer { display: none; }
+
+  /* ---------- 顶栏紧凑化 ---------- */
+  .header { position: sticky; top: 0; }
+  .header .container { height: 52px; gap: 10px; padding: 0 12px; }
+  .logo { gap: 8px; }
+  .logo-badge { width: 32px; height: 32px; font-size: 16px; border-width: 1px; }
+  .logo-text .cn { font-size: 17px; letter-spacing: 2px; }
+  .logo-text .en { display: none; }
+  .nav { display: none; }
+  .header-actions { gap: 10px; margin-left: auto; }
+  .header-actions .btn-join { display: none; }
+  .header-actions a { font-size: 13px !important; white-space: nowrap; }
+
+  /* ---------- 容器与区块留白 ---------- */
+  .container { padding: 0 12px; }
+  .section { padding: 18px 0; }
+  .section-head { margin-bottom: 12px; }
+  .section-title { font-size: 17px; gap: 8px; }
+  .section-title::before { width: 3px; height: 16px; }
+  .section-title .sub { display: none; }
+  .section-more { font-size: 12px; }
+
+  /* ---------- 首屏 Hero ---------- */
+  .hero { padding: 20px 0 16px; }
+  .hero .container { gap: 18px; }
+  .hero-copy .kicker { font-size: 12px; }
+  .hero-copy h1 { font-size: 23px; letter-spacing: 1px; line-height: 1.3; }
+  .hero-copy p { font-size: 13px; margin: 10px 0 16px; max-width: none; }
+  .hero-stats { gap: 16px; margin-bottom: 16px; }
+  .hero-stats .num { font-size: 19px; }
+  .hero-stats .label { font-size: 11px; }
+  .hero-btns { gap: 10px; }
+  .hero-btns .btn { flex: 1; justify-content: center; padding: 12px; font-size: 14px; }
+  .hero-visual img { border-radius: 12px; }
+  .hero-float { display: none; }
+
+  /* ---------- 图标整体缩小 ---------- */
+  .cat-item { padding: 10px 4px; border-radius: 10px; }
+  .cat-item .icon { font-size: 22px; margin-bottom: 4px; }
+  .cat-item .name { font-size: 12px; }
+  .cat-item .count { display: none; }
+  .join-benefit .ico { font-size: 22px; margin-bottom: 6px; }
+  .empty-box .big { font-size: 30px; margin-bottom: 6px; }
+
+  /* ---------- 栅格与卡片 ---------- */
+  .category-grid { gap: 8px; }
+  .store-grid, .product-grid { gap: 10px; }
+  .p-price-row { padding: 10px 12px; margin-bottom: 12px; }
+  .p-price-row .price { font-size: 21px; }
+  .p-price-row .meta { gap: 12px; font-size: 11px; flex-wrap: wrap; }
+  .shop-bar { padding: 10px 12px; gap: 10px; margin: 14px 0; }
+  .shop-bar .s-logo { width: 32px; height: 32px; font-size: 14px; border-radius: 8px; }
+
+  /* ---------- 商品详情 / 评价 ---------- */
+  .product-detail { padding: 16px; gap: 16px; border-radius: 12px; }
+  .product-detail .p-img { height: 240px; }
+  .p-info h1 { font-size: 19px; }
+  .p-info .p-rating .val { font-size: 17px; }
+  .p-actions { gap: 10px; margin-top: 16px; }
+  .p-actions .btn { padding: 12px; font-size: 14px; }
+  .rating-panel { padding: 16px; }
+  .rating-summary .score { font-size: 34px; }
+  .review-item { padding: 12px; }
+
+  /* ---------- 弹窗 / 表单 ---------- */
+  .modal { width: 94% !important; max-width: 94% !important; padding: 18px !important; border-radius: 14px; }
+  .modal-mask { padding: 12px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .join-hero h1 { font-size: 22px; letter-spacing: 2px; }
+
+  /* ---------- 工作台 / 后台 ---------- */
+  .workbench { grid-template-columns: 1fr; gap: 14px; margin: 12px 0 24px; }
+  .workbench-side { position: static; padding: 14px; }
+  .wb-nav { flex-direction: row; flex-wrap: wrap; }
+  .wb-nav button { width: auto !important; padding: 8px 12px; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  /* ---------- 悬浮 AI 助手：上移，避免被底部 Tab 遮住 ---------- */
+  .ai-fab { bottom: calc(68px + env(safe-area-inset-bottom)); right: 12px; padding: 10px 14px; font-size: 13px; }
+  .ai-panel {
+    left: 10px; right: 10px; width: auto;
+    bottom: calc(120px + env(safe-area-inset-bottom));
+    max-height: 72vh;
+  }
+  .ai-body { height: 46vh; }
+
+  /* ---------- 表格类页面横向滚动 ---------- */
+  .data-table, table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}

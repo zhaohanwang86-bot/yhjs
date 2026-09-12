@@ -1,0 +1,45 @@
+# ================= 依赖 =================
+node_modules/
+.pnpm-store/
+
+# ================= 构建产物 =================
+dist/
+build/
+target/
+.vite/
+*.class
+
+# ================= Android (Capacitor) =================
+android/.gradle/
+android/build/
+android/app/build/
+android/.idea/
+android/local.properties
+android/captures/
+*.apk
+*.aab
+
+# ================= IDE =================
+.idea/
+*.iml
+.vscode/
+
+# ================= 日志 / 打包文件 =================
+*.log
+dev.log
+dev.err
+*.zip
+*.7z
+yhjs-spring-server/deploy/*.jar
+
+# ================= 本地工具与调试目录 =================
+.tools/
+.dbg/
+.pai/
+
+# ================= 环境变量 / 密钥（切勿提交） =================
+.env
+.env.*
+local.properties
+
+# 说明：根目录的 *.sql（schema.sql / *_migration.sql / yhjs_full.sql）是建库脚本，需要保留，故不忽略

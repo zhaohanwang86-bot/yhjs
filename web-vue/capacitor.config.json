@@ -1,0 +1,12 @@
+{
+  "appId": "com.yhjs.mall",
+  "appName": "炎黄济世",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#f7f5f0"
+  }
+}
